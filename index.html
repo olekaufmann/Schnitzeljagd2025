@@ -2,21 +2,48 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>
+  <title>Frage-Webseite</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      background-color: #f4f4f4;
+      padding: 50px;
       text-align: center;
-      padding-top: 100px;
     }
-    h1 {
-      color: #333;
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>Hello, GitHub Pages! 👋</h1>
-  <p>Dies ist meine erste gehostete Website auf GitHub 🚀</p>
+
+  <h1>Frage:</h1>
+  <p>Was ist die Abkürzung für das World Wide Web?</p>
+
+  <input type="text" id="answerInput" placeholder="Antwort hier eingeben">
+  <button onclick="checkAnswer()">Prüfen</button>
+
+  <div id="result"></div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answerInput").value.trim().toLowerCase();
+      const result = document.getElementById("result");
+
+      if (input === "www") {
+        result.textContent = "Richtig ✅";
+        result.style.color = "green";
+      } else {
+        result.textContent = "Leider falsch ❌";
+        result.style.color = "red";
+      }
+    }
+  </script>
+
 </body>
 </html>
