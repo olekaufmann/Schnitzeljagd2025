@@ -6,9 +6,25 @@
   <title>Checkboxen zentriert</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: 'Arial', cursive, sans-serif;
+      background: linear-gradient(to right, #CFFF9B, #CFFF9B);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
     }
-  input, button {
+    img {
+      max-width: 60%;
+      border-radius: 50px;
+    }
+    p {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+   input, button {
       padding: 10px;
       font-size: 18px;
       margin: 10px;
@@ -29,7 +45,6 @@
       justify-content: left; /* Zentriert den inneren Block horizontal */
       margin-top: 50px;
     }
-
     .checkbox-liste {
       text-align: left;     /* Text + Checkbox linksbündig */
       display: inline-block;
@@ -38,12 +53,10 @@
       border-radius: 8px;
       background-color: #f9f9f9;
     }
-
     .checkbox-liste label {
       display: block;
       margin-bottom: 10px;
     }
-
     .result {
       text-align: center;
       margin-top: 20px;
@@ -62,7 +75,6 @@
   <br>
   <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>    
 
-  
   <div class="container">
     <div class="checkbox-liste">
       <h3>Welche Tiere können fliegen?</h3>
