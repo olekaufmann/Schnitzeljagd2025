@@ -82,13 +82,16 @@
     <label><input type="checkbox" name="tier" value="löwe"> Löwe</label>
     <label><input type="checkbox" name="tier" value="elefant"> Elefant</label>
     <label><input type="checkbox" name="tier" value="schwein"> Schwein</label>
-    <label><input type="checkbox" name="tier" value="kuh"> Kuh</label>
+    <label><input type="checkbox" name="tier" value="wolf"> Wolf</label>
+    <label><input type="checkbox" name="tier" value="affe"> Affe</label>
     <label><input type="checkbox" name="tier" value="frosch"> Frosch</label>
     <label><input type="checkbox" name="tier" value="pferd"> Pferd</label>
     <label><input type="checkbox" name="tier" value="meise"> Meise</label>
     <label><input type="checkbox" name="tier" value="esel"> Esel</label>
     <label><input type="checkbox" name="tier" value="amsel"> Amsel</label>
     <label><input type="checkbox" name="tier" value="pfau"> Pfau</label>
+    <label><input type="checkbox" name="tier" value="schaf"> Schaf</label>
+    <label><input type="checkbox" name="tier" value="kuh"> Kuh</label>
         <br>
         <button type="button" onclick="prüfeAntwort()">✅ Prüfen</button>
       </form>
@@ -98,7 +101,7 @@
 
   <script>
     function prüfeAntwort() {
-      const richtigeAntworten = ['löwe', 'kuh'];
+      const richtigeAntworten = ['löwe', 'kuh, 'amsel', 'elefant','esel','schwein','frosch'];
       const alleCheckboxen = document.querySelectorAll('input[name="tier"]');
       let istRichtig = true;
 
