@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Willkommen!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #ffd6ec, #ffe8f0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 Willkommen 🌸</h1>
+  <p>Wenn ihr das hier lest, heißt es, dass ihr die erste Aufgabe schon gelöst habt - Glückwunsch! </p>    
+  <p>Wenn ihr den nächsten Tip bekommen wollt, müßt ihr erst ein kleines Rätsel lösen.</p>
+  <p>Drei Piraten erbeuten eine Schatzkiste voller Münzen, die sie über Nacht nacheinander bewachen um den Schatz am nächsten Tag dann gerecht zu teilen. 
+    Der Pirat in der ersten Schicht, traut den anderen nicht so recht und nimmt sich heimlich schonmal ein Drittel aller Münzen und noch zwei Münzen extra. 
+    Dem nächsten Pirat geht es ähnlich und auch er nimmt sich in seiner Schicht von den Münzen auch schon ein Drittel und noch zwei Münzen extra. 
+    Wie sollte es anders sein, der dritte Pirat traut den anderen auch nicht und nimmt sich in der seinter letzten Schicht auch noch genau ein Drittel der verbliebenen Münzen und noch zwei Münze extra. 
+    Am Morgen liegen dann nur noch drei Münzen in der True.
+  </p>
+  <p> Wieviele Münzen lagen am Anfang in der True?</p>
+  <!--
+  (3+1) * 3/2  = 6
+  (6+2) * 3/2  = 12
+  (12+2) * 3/2 = 21 
+  -->
+  
+  <!--
+  <audio id="meinAudio" controls>
+  <source src="audio/teich.mp3" type="audio/mpeg">  
+  Dein Browser unterstützt dieses Audioformat nicht.
+  </audio>  
+  <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>
+  -->
+  
+  <!--
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  <audio id="meinAudio" src="audio/teich.mp3"></audio>
+  <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>
+  -->
+
+  <input type="text" id="antwort" placeholder="Gib hier die Antwort ein">
+  <button onclick="checkAntwort()">Absenden</button>
+  <div id="feedback"></div>
+
+  <script>
+    function checkAntwort() {
+      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+
+      if (antwort === "21") {
+        feedback.textContent = "Richtig Super 😀 Ihr dürft passieren!";
+        setTimeout(() => {
+          window.location.href = "seite2.html"; // Neue Seite mit Bild und Text
+        }, 1500);
+      } else {
+        feedback.textContent = "Das war leider falsch. 😕";
+      }
+    }
+  </script>
+</body>
+</html>
+
