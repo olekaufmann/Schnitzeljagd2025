@@ -36,6 +36,31 @@
       display: flex;
       gap: 10px; /* Abstand zwischen den Buttons */
     }
+    .container {
+      display: flex;
+      justify-content: left; /* Zentriert den inneren Block horizontal */
+      margin-top: 50px;
+    }
+
+    .checkbox-liste {
+      text-align: left;     /* Text + Checkbox linksbündig */
+      display: inline-block;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .checkbox-liste label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -49,26 +74,27 @@
   <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>    
 
 
-  
+    
+  <div class="container">
+    <div class="checkbox-liste">
+
   <form id="quiz-form">
-    <label><input type="checkbox" name="tier" value="löwe"> Löwe</label><br>
-    <label><input type="checkbox" name="tier" value="elefant"> Elefant</label><br>
-    <label><input type="checkbox" name="tier" value="schwein"> Schwein</label><br>
-    <label><input type="checkbox" name="tier" value="kuh"> Kuh</label><br>
-    <label><input type="checkbox" name="tier" value="frosch"> Frosch</label><br>
-    <label><input type="checkbox" name="tier" value="pferd"> Pferd</label><br>
-    <label><input type="checkbox" name="tier" value="esel"> Esel</label><br><br>
-    <label><input type="checkbox" name="tier" value="amsel"> Amsel</label><br>
-    <label><input type="checkbox" name="tier" value="meise"> Meise</label><br>
+    <label><input type="checkbox" name="tier" value="löwe"> Löwe</label>
+    <label><input type="checkbox" name="tier" value="elefant"> Elefant</label>
+    <label><input type="checkbox" name="tier" value="schwein"> Schwein</label>
+    <label><input type="checkbox" name="tier" value="kuh"> Kuh</label>
+    <label><input type="checkbox" name="tier" value="frosch"> Frosch</label>
+    <label><input type="checkbox" name="tier" value="pferd"> Pferd</label>
+    <label><input type="checkbox" name="tier" value="esel"> Esel</label>
+    <label><input type="checkbox" name="tier" value="amsel"> Amsel</label>
+    <label><input type="checkbox" name="tier" value="meise"> Meise</label>
     <button type="button" onclick="checkAntwort()">✅ Prüfen</button>
   </form>
-  
-  
-  <input type="text" id="antwort" placeholder="Passwort?">
-  <button onclick="checkAntwort()">Absenden</button>
-  <div id="feedback"></div>
+  <div class="result" id="ergebnis"></div>
+    </div>
+  </div>
 
-  
+    
   <script>
     function checkAntwort() {
       const richtigeAntworten = ['löwe', 'esel'];
@@ -88,9 +114,11 @@
       if (istRichtig) {
         ergebnisBox.textContent = "✅ Richtig!";
         ergebnisBox.style.color = "green";
+        setTimeout(() => {window.location.href = "seite6.html"; }, 15);
       } else {
         ergebnisBox.textContent = "❌ Leider falsch. Versuch's nochmal!";
         ergebnisBox.style.color = "red";
+        setTimeout(() => {window.location.href = "seite6.html"; }, 15);
       }
   </script>
 </body>
