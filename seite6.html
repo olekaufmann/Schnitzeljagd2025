@@ -67,7 +67,7 @@
 <body>
   <h1>Wer ist das?</h1>
   <p> Jetzt wird getestet, wie gut ihr hören könnt. </p>        
-  <p>Kreuzt an was alles mitsingt!</p>
+  
   <audio id="meinAudio" controls>
   <source src="audio/tiere.mp3" type="audio/mpeg">  
   Dein Browser unterstützt dieses Audioformat nicht.
@@ -77,7 +77,7 @@
 
   <div class="container">
     <div class="checkbox-liste">
-      <h3>Welche Tiere können fliegen?</h3>
+      <h3>Kreuzt an was alles mitsingt!</h3>
       <form id="quiz-form">
     <label><input type="checkbox" name="tier" value="löwe"> Löwe</label>
     <label><input type="checkbox" name="tier" value="elefant"> Elefant</label>
@@ -91,13 +91,12 @@
     <label><input type="checkbox" name="tier" value="amsel"> Amsel</label>
     <label><input type="checkbox" name="tier" value="pfau"> Pfau</label>
     <label><input type="checkbox" name="tier" value="schaf"> Schaf</label>
-    <label><input type="checkbox" name="tier" value="kuh"> Kuh</label>
-        <br>
-        <button type="button" onclick="prüfeAntwort()">✅ Prüfen</button>
+    <label><input type="checkbox" name="tier" value="kuh"> Kuh</label>        
       </form>
-      <div class="result" id="ergebnis"></div>
     </div>
   </div>
+  <button type="button" onclick="prüfeAntwort()">✅ Prüfen</button>
+  <div class="result" id="ergebnis"></div>
 
   <script>
     function prüfeAntwort() {
