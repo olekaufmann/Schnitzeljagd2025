@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Willkommen!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #ffd6ec, #ffe8f0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1> ....   .-   .-..    .-..  --- </h1>
+  <p>Morse-Code ist ziemlich schwer, aber ihr schaft das! </p>    
+  <p>Bei dem Ort findet ihr das nächste Passwort.</p>
+  <!--
+  -->
+  <audio id="meinAudio" controls>
+  <source src="audio/teich.mp3" type="audio/mpeg">  
+  Dein Browser unterstützt dieses Audioformat nicht.
+  </audio>  
+  <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>  
+  
+  <input type="text" id="antwort" placeholder="Passwort?">
+  <button onclick="checkAntwort()">Absenden</button>
+  <div id="feedback"></div>
+
+  <script>
+    function checkAntwort() {
+      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+
+      if (antwort === "0308") {
+        feedback.textContent = "Richtig Super 😀 Ihr dürft passieren!";
+        setTimeout(() => {
+          window.location.href = "seite2.html"; // Neue Seite mit Bild und Text
+        }, 1500);
+      } else {
+        feedback.textContent = "Das war leider falsch. 😕";
+      }
+    }
+  </script>
+</body>
+</html>
+
