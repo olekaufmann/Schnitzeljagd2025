@@ -30,5 +30,24 @@
   <h2>Weiter geht's</h2>  
   <p> Von dem Ort der Markierung geht 20m nach Nord-Ost.</p>
   
+  
+  <input type="text" id="antwort" placeholder="Antwort?">
+  <button onclick="checkAntwort()">Absenden</button>
+  <div id="feedback"></div>
+
+  <script>
+    function checkAntwort() {
+      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+      if (antwort === "0108") {
+        feedback.textContent = "perfekt!";
+        setTimeout(() => {
+          window.location.href = "seite4.html"; // Neue Seite mit Bild und Text
+        }, 1500);
+      } else {
+        feedback.textContent = "Hey, so nicht! 😕";
+      }
+    }
+  </script>
 </body>
 </html>
