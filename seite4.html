@@ -32,6 +32,10 @@
       margin-top: 20px;
       font-weight: bold;
     }
+    .button-container {
+      display: flex;
+      gap: 10px; /* Abstand zwischen den Buttons */
+    }
   </style>
 </head>
 <body>
@@ -50,6 +54,12 @@
   <button onclick="checkAntwort()">Absenden</button>
   <div id="feedback"></div>
 
+
+  <div class="button-container">
+    <button onclick="morse0()"> Morse 1</button>
+    <button onclick="morse1()"> Morse 2</button>    
+  </div>
+  
   <script>
     function checkAntwort() {
       const antwort = document.getElementById('antwort').value.trim().toLowerCase();
@@ -63,6 +73,12 @@
       } else {
         feedback.textContent = "Das war leider falsch. 😕";
       }
+    }
+    function morse0() {
+      setTimeout(() => {window.location.href = "morse0.html";}, 100);
+    }
+    function morse1() {
+      setTimeout(() => {window.location.href = "morse1.html";}, 100);
     }
   </script>
 </body>
