@@ -42,6 +42,14 @@
       justify-content: left; /* Zentriert den inneren Block horizontal */
       margin-top: 10px;
     }
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+      gap: 10px 20px; /* row-gap and column-gap */
+      max-width: 400px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
     .checkbox-liste {
       text-align: left;     /* Text + Checkbox linksbündig */
       display: inline-block;
@@ -53,6 +61,10 @@
     .checkbox-liste label {
       display: block;
       margin-bottom: -10px;
+    }
+    .checkbox-grid label {
+      display: flex;
+      align-items: center;
     }
     .result {
       text-align: center;
@@ -70,9 +82,10 @@
   Dein Browser unterstützt dieses Audioformat nicht.
   </audio>    
   <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>    
-  <div class="container">
-    <div class="checkbox-liste">      
-      <form id="quiz-form">
+  
+  <form id="quiz-form">
+  <div class="checkbox-liste">   
+  <div class="checkbox-grid">  
     <label><input type="checkbox" name="tier" value="löwe"> Löwe</label>
     <label><input type="checkbox" name="tier" value="elefant"> Elefant</label>
     <label><input type="checkbox" name="tier" value="schwein"> Schwein</label>
@@ -86,9 +99,12 @@
     <label><input type="checkbox" name="tier" value="pfau"> Pfau</label>
     <label><input type="checkbox" name="tier" value="schaf"> Schaf</label>
     <label><input type="checkbox" name="tier" value="kuh"> Kuh</label>        
-      </form>
+    <label><input type="checkbox" name="tier" value="ziege"> Ziege</label>        
+      
     </div>
-  </div>
+    </div>
+    </form>
+  
   <button type="button" onclick="prüfeAntwort()">✅ Prüfen</button>
   <div class="result" id="ergebnis"></div>
 
