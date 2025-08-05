@@ -1,41 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Willkommen!</title>
+  <title>Checkboxen zentriert</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Arial', cursive, sans-serif;
-      background: linear-gradient(to right, #ffd6ec, #ffe8f0);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
+      font-family: Arial, sans-serif;
     }
-    input, button {
-      padding: 10px;
-      font-size: 16px;
-      margin: 10px;
-      border: none;
-      border-radius: 8px;
-    }
-    button {
-      background-color: #ff69b4;
-      color: white;
-      cursor: pointer;
-    }
-    #feedback {
-      margin-top: 20px;
-      font-weight: bold;
-    }
-    .button-container {
-      display: flex;
-      gap: 10px; /* Abstand zwischen den Buttons */
-    }
+
     .container {
       display: flex;
       justify-content: left; /* Zentriert den inneren Block horizontal */
@@ -65,20 +38,20 @@
 </head>
 <body>
   <h1>Wer ist das?</h1>
-  <p> Jetzt wird getestet wie gut ihr hören könnt. </p>        
-  <p>Kreuzt an was alles mit singt!</p>
+  <p> Jetzt wird getestet, wie gut ihr hören könnt. </p>        
+  <p>Kreuzt an was alles mitsingt!</p>
   <audio id="meinAudio" controls>
   <source src="audio/tiere.mp3" type="audio/mpeg">  
   Dein Browser unterstützt dieses Audioformat nicht.
   </audio>  
+  <br>
   <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>    
 
-
-    
+  
   <div class="container">
     <div class="checkbox-liste">
-
-  <form id="quiz-form">
+      <h3>Welche Tiere können fliegen?</h3>
+      <form id="quiz-form">
     <label><input type="checkbox" name="tier" value="löwe"> Löwe</label>
     <label><input type="checkbox" name="tier" value="elefant"> Elefant</label>
     <label><input type="checkbox" name="tier" value="schwein"> Schwein</label>
@@ -88,23 +61,22 @@
     <label><input type="checkbox" name="tier" value="esel"> Esel</label>
     <label><input type="checkbox" name="tier" value="amsel"> Amsel</label>
     <label><input type="checkbox" name="tier" value="meise"> Meise</label>
-    <button type="button" onclick="checkAntwort()">✅ Prüfen</button>
-  </form>
-  <div class="result" id="ergebnis"></div>
+        <br>
+        <button type="button" onclick="prüfeAntwort()">✅ Prüfen</button>
+      </form>
+      <div class="result" id="ergebnis"></div>
     </div>
   </div>
 
-    
   <script>
-    function checkAntwort() {
-      const richtigeAntworten = ['löwe', 'esel'];
+    function prüfeAntwort() {
+      const richtigeAntworten = ['löwe', 'kuh'];
       const alleCheckboxen = document.querySelectorAll('input[name="tier"]');
       let istRichtig = true;
 
       alleCheckboxen.forEach(checkbox => {
         const istAusgewählt = checkbox.checked;
         const sollAusgewähltSein = richtigeAntworten.includes(checkbox.value);
-
         if (istAusgewählt !== sollAusgewähltSein) {
           istRichtig = false;
         }
@@ -114,12 +86,13 @@
       if (istRichtig) {
         ergebnisBox.textContent = "✅ Richtig!";
         ergebnisBox.style.color = "green";
-        setTimeout(() => {window.location.href = "seite6.html"; }, 15);
+        setTimeout(() => { window.location.href = "seite5.html"; }, 1500);
       } else {
-        ergebnisBox.textContent = "❌ Leider falsch. Versuch's nochmal!";
+        ergebnisBox.textContent = "❌ Leider falsch. Hört nochmal hin!";
         ergebnisBox.style.color = "red";
-        setTimeout(() => {window.location.href = "seite6.html"; }, 15);
       }
+    }
   </script>
+
 </body>
 </html>
