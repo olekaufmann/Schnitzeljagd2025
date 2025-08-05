@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #fddde6, #ffeef9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 50px;
+    }
+    p {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<title> 1 </title>
+<body>
+  <img src="bilder/morse0.jpg" alt="morse0">      
+  <button onclick="checkAntwort()">zurück</button>  
+  <script>
+    function checkAntwort() {
+        setTimeout(() => {window.location.href = "seite4.html";}, 15);
+    }
+  </script>
+</body>
+</html>
