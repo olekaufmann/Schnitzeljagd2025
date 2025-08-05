@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Willkommen!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', cursive, sans-serif;
+      background: linear-gradient(to right, #ffd6ec, #ffe8f0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .button-container {
+      display: flex;
+      gap: 10px; /* Abstand zwischen den Buttons */
+    }
+  </style>
+</head>
+<body>
+  <h1> ....    .-    .-..     .-..    --- </h1>
+  <p>Morse-Code ist ziemlich schwer, aber ihr schafft das! </p>        
+  <p>Bei dem besagten Ort findet ihr das nächste Passwort.</p>
+  <audio id="meinAudio" controls>
+  <source src="audio/teich.mp3" type="audio/mpeg">  
+  Dein Browser unterstützt dieses Audioformat nicht.
+  </audio>  
+  <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>  
+  
+  <input type="text" id="antwort" placeholder="Passwort?">
+  <button onclick="checkAntwort()">Absenden</button>
+  <div id="feedback"></div>
+
+
+  <div class="button-container">
+    <button onclick="morse0()"> Hilfe</button>
+    <button onclick="morse1()"> Hilfe</button>    
+    <button onclick="morse2()"> Hilfe</button>    
+  </div>
+  
+  <script>
+    function checkAntwort() {
+      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+
+      if (antwort === "0308") {
+        feedback.textContent = "Richtig Super 😀 Ihr dürft passieren!";
+        setTimeout(() => {
+          window.location.href = "seite5.html"; // Neue Seite mit Bild und Text
+        }, 1500);
+      } else {
+        feedback.textContent = "Das war leider falsch. 😕";
+      }
+    }
+    function morse0() {
+      setTimeout(() => {window.location.href = "morse0.html";}, 100);
+    }
+    function morse1() {
+      setTimeout(() => {window.location.href = "morse1.html";}, 100);
+    }
+    function morse2() {
+      setTimeout(() => {window.location.href = "morse2.html";}, 100);
+    }
+  </script>
+</body>
+</html>
