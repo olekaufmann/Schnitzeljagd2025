@@ -1,1 +1,71 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Überraschung!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', cursive, sans-serif;
+      background: linear-gradient(to right, #fddde6, #ffeef9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    img {
+      max-width: 20%;
+      border-radius: 12px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+    }
+
+     button {
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>alea iacta est</h2>  
+  <p> Wer kann gut rechnen?</p>
+  <p> LIV + XII </p>
+  
+  <input type="text" id="antwort" placeholder="Lösung">  
+  <button onclick="checkAntwort()">Absenden</button>
+  <div id="feedback"></div>
+
+  <script>
+    function checkAntwort() {
+      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+      if( (antwort === "66") oder (antwort === "lxvi")) {
+        feedback.textContent = "perfekt!";
+        setTimeout(() => {
+          window.location.href = "seite4.html"; // Neue Seite mit Bild und Text
+        }, 1500);
+      } else {
+        feedback.textContent = "Leider falsch! 😕";
+      }
+    }
+  </script>
+</body>
+</html>
