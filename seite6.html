@@ -17,10 +17,6 @@
       height: 100vh;
       text-align: center;
     }
-    img {
-      max-width: 60%;
-      border-radius: 50px;
-    }
     p {
       font-size: 18px;
       margin-top: 20px;
@@ -44,23 +40,23 @@
     .container {
       display: flex;
       justify-content: left; /* Zentriert den inneren Block horizontal */
-      margin-top: 50px;
+      margin-top: 10px;
     }
     .checkbox-liste {
       text-align: left;     /* Text + Checkbox linksbündig */
       display: inline-block;
-      padding: 20px;
+      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 8px;
       background-color: #f9f9f9;
     }
     .checkbox-liste label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 3px;
     }
     .result {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 10px;
       font-weight: bold;
     }
   </style>
@@ -73,9 +69,7 @@
   <source src="audio/tiere.mp3" type="audio/mpeg">  
   Dein Browser unterstützt dieses Audioformat nicht.
   </audio>    
-  <br>
   <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>    
-
   <div class="container">
     <div class="checkbox-liste">
       <h3>Kreuzt an was alles mitsingt!</h3>
