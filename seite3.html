@@ -28,9 +28,8 @@
 </head>
 <body>
   <h2>Weiter geht's</h2>  
-  <p> Von dem Ort der Markierung geht 20m nach Nord-Ost.</p>
-  
-  
+  <p> Von eurem aktuellen Ort folgt dem Wanderweg weiter Richtung Weesenstein bis zu dem Punkt an dem der Meusegast-Spielplatz genau in Peilung 204° liegt. Beim Baum gibt es den nächsten Code</p>
+    
   <input type="text" id="antwort" placeholder="Antwort?">
   <button onclick="checkAntwort()">Absenden</button>
   <div id="feedback"></div>
@@ -39,7 +38,7 @@
     function checkAntwort() {
       const antwort = document.getElementById('antwort').value.trim().toLowerCase();
       const feedback = document.getElementById('feedback');
-      if (antwort === "0108") {
+      if (antwort === "0208") {
         feedback.textContent = "perfekt!";
         setTimeout(() => {
           window.location.href = "seite4.html"; // Neue Seite mit Bild und Text
