@@ -58,7 +58,7 @@
     function checkAntwort() {
       const antwort = document.getElementById('antwort').value.trim().toLowerCase();
       const feedback = document.getElementById('feedback');
-      if( (antwort === "66") oder (antwort === "lxvi")) {
+      if( (antwort === "66") | (antwort === "lxvi")) {
         feedback.textContent = "perfekt!";
         setTimeout(() => {
           window.location.href = "seite4.html"; // Neue Seite mit Bild und Text
