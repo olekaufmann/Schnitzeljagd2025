@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: 'Arial', cursive, sans-serif;
       background: linear-gradient(to right, #ffd6ec, #ffe8f0);
       display: flex;
       flex-direction: column;
@@ -40,7 +40,7 @@
 </head>
 <body>
   <h1> ....   .-   .-..    .-..  --- </h1>
-  <p>Morse-Code ist ziemlich schwer, aber ihr schafft das! </p>    
+  <p>Morse-Code ist ziemlich schwer, aber ihr schafft das! </p>        
   <p>Bei dem Ort findet ihr das nächste Passwort.</p>
   <audio id="meinAudio" controls>
   <source src="audio/teich.mp3" type="audio/mpeg">  
@@ -54,8 +54,9 @@
 
 
   <div class="button-container">
-    <button onclick="morse0()"> Hilfe 1</button>
-    <button onclick="morse1()"> Hilfe 2</button>    
+    <button onclick="morse0()"> Hilfe</button>
+    <button onclick="morse1()"> Hilfe</button>    
+    <button onclick="morse2()"> Hilfe</button>    
   </div>
   
   <script>
@@ -77,6 +78,9 @@
     }
     function morse1() {
       setTimeout(() => {window.location.href = "morse1.html";}, 100);
+    }
+    function morse2() {
+      setTimeout(() => {window.location.href = "morse2.html";}, 100);
     }
   </script>
 </body>
