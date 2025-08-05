@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #fddde6, #ffeef9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 50px;
+    }
+    p {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<title> Weiter gehts! </title>
+<body>
+  <h1> Wieder eine kleine Knobelaufgabe </h1>
+  
+  <img src="bilder/schnecke.jpg" alt="karte">
+  <p> Eine kleine Schnecke befindet sich auf dem Boden eines alten, inzwischen ausgetrockneten Brunnens. Es ist bekannt, dass der Brunnen insgesamt 10 Meter tief ist.
+Die kleine Schnecke möchte den Brunnen nun gerne wieder verlassen und beginnt also, an der Innenseite des Brunnens nach oben zu kriechen. Leider ist so eine kleine Schnecke nicht sonderlich schnell.
+Die Schnecke legt jede Stunde eine Distanz von 3 Metern nach oben zurück.
+Allerdings ist sie dann bereits so erschöpft, dass sie sich eine Stunde lang ausruhen muss, um ihre Kräfte zu regenerieren. In dieser Stunde rutscht die Schnecke dummerweise wieder um 2 Meter nach unten.
+Dieses Spiel wiederholt sich so lange, bis die Schnecke irgendwann oben angekommen ist.</p>
+<p>Wie lange braucht die Schnecke, um aus dem Brunnen zu gelangen?</p>
+ 
+  <input type="text" id="antwort" placeholder="Lösung bitte hier">
+  <button onclick="checkAntwort()">Absenden</button>
+  <div id="feedback"></div>
+
+  <script>
+    function checkAntwort() {
+      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+
+      if (antwort === "15") {
+        feedback.textContent = "... und weiter geht's!";
+        setTimeout(() => {
+          window.location.href = "seite3.html"; // Neue Seite mit Bild und Text
+        }, 1500);
+      } else {
+        feedback.textContent = "Nicht raten! 😕";
+      }
+    }
+  </script>
+</body>
+</html>
