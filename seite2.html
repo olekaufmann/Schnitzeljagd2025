@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weiter gehts!</title>
+  
   <style>
     body {
       margin: 0;
@@ -24,7 +24,7 @@
       font-size: 18px;
       margin-top: 20px;
     }
-        input, button {
+    input, button {
       padding: 10px;
       font-size: 16px;
       margin: 10px;
@@ -43,6 +43,7 @@
 
   </style>
 </head>
+<title> Weiter gehts! </title>
 <body>
   
   <h2> Begebt euch zu dem Ort auf der Karte. Bei der Bank sucht nach der Zahlen-Kombination. Erst wenn ihr mir die nennen könnt geht es weiter. </h2>
@@ -58,7 +59,7 @@
       const antwort = document.getElementById('antwort').value.trim().toLowerCase();
       const feedback = document.getElementById('feedback');
 
-      if (antwort === "1111") {
+      if (antwort === "0108") {
         feedback.textContent = "... und weiter geht's!";
         setTimeout(() => {
           window.location.href = "seite3.html"; // Neue Seite mit Bild und Text
