@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkboxen zentriert</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center; /* Zentriert den inneren Block horizontal */
+      margin-top: 50px;
+    }
+
+    .checkbox-liste {
+      text-align: left;     /* Text + Checkbox linksbündig */
+      display: inline-block;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .checkbox-liste label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="checkbox-liste">
+      <h3>Welche Tiere können fliegen?</h3>
+      <form id="quiz-form">
+        <label><input type="checkbox" name="tier" value="adler"> Adler</label>
+        <label><input type="checkbox" name="tier" value="elefant"> Elefant</label>
+        <label><input type="checkbox" name="tier" value="fledermaus"> Fledermaus</label>
+        <label><input type="checkbox" name="tier" value="pinguin"> Pinguin</label>
+        <label><input type="checkbox" name="tier" value="schmetterling"> Schmetterling</label>
+        <br>
+        <button type="button" onclick="prüfeAntwort()">✅ Prüfen</button>
+      </form>
+      <div class="result" id="ergebnis"></div>
+    </div>
+  </div>
+
+  <script>
+    function prüfeAntwort() {
+      const richtigeAntworten = ['adler', 'fledermaus', 'schmetterling'];
+      const alleCheckboxen = document.querySelectorAll('input[name="tier"]');
+      let istRichtig = true;
+
+      alleCheckboxen.forEach(checkbox => {
+        const istAusgewählt = checkbox.checked;
+        const sollAusgewähltSein = richtigeAntworten.includes(checkbox.value);
+        if (istAusgewählt !== sollAusgewähltSein) {
+          istRichtig = false;
+        }
+      });
+
+      const ergebnisBox = document.getElementById("ergebnis");
+      if (istRichtig) {
+        ergebnisBox.textContent = "✅ Richtig!";
+        ergebnisBox.style.color = "green";
+      } else {
+        ergebnisBox.textContent = "❌ Leider falsch. Versuch's nochmal!";
+        ergebnisBox.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
