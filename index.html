@@ -37,54 +37,28 @@
 <body>
   <h1>🌸 Willkommen 🌸</h1>
   <p>Wenn ihr das hier lest, heißt es, dass ihr die erste Aufgabe schon gelöst habt - Glückwunsch! </p>    
-  <p>Wenn ihr den nächsten Tip bekommen wollt, müßt ihr erst ein kleines Rätsel lösen.</p>
-  <p>Drei Piraten erbeuten eine Schatzkiste voller Münzen, die sie über Nacht nacheinander bewachen um den Schatz am nächsten Tag dann gerecht zu teilen. 
-    Der Pirat in der ersten Schicht, traut den anderen nicht so recht und nimmt sich heimlich schonmal ein Drittel aller Münzen und noch zwei Münzen extra. 
-    Dem nächsten Pirat geht es ähnlich und auch er nimmt sich in seiner Schicht von den Münzen auch schon ein Drittel und noch zwei Münzen extra. 
-    Wie sollte es anders sein, der dritte Pirat traut den anderen auch nicht und nimmt sich in der seinter letzten Schicht auch noch genau ein Drittel der verbliebenen Münzen und noch zwei Münze extra. 
-    Am Morgen liegen dann nur noch drei Münzen in der True.
-  </p>
-  <p> Wieviele Münzen lagen am Anfang in der True?</p>
-  <!--
-  (3+1) * 3/2  = 6
-  (6+2) * 3/2  = 12
-  (12+2) * 3/2 = 21 
-  -->
-  
-  <!--
-  <audio id="meinAudio" controls>
-  <source src="audio/teich.mp3" type="audio/mpeg">  
-  Dein Browser unterstützt dieses Audioformat nicht.
-  </audio>  
-  <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>
-  -->
-  
-  <!--
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  <audio id="meinAudio" src="audio/teich.mp3"></audio>
-  <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>
-  -->
+  <p>Wenn ihr euch der Herausforderung stellen wollt und am Ende den Schatz finden wollt, wäre es praktisch vorher noch ein paar Kleinigkeiten mitzunehmen.</p>
+  <ul>
+  <li>Zettel und Stift,</li>
+  <li>Kompass,</li>
+  <li>Massband,</li>
+  <li>Massband,</li>
+  <li>und natürlich gute Laune 😀</li>  
+  </ul>  
+  <p style="margin-top: 30%; margin-bottom: 30%;"> Wen ihr soweit seid, drückt einfach auf "weiter".</p>
 
-  <input type="text" id="antwort" placeholder="Gib hier die Antwort ein">
-  <button onclick="checkAntwort()">Absenden</button>
+  <button onclick="checkAntwort()">weiter</button>
   <div id="feedback"></div>
-
   <script>
-    function checkAntwort() {
-      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
-      const feedback = document.getElementById('feedback');
-
-      if (antwort === "21") {
-        feedback.textContent = "Richtig Super 😀 Ihr dürft passieren!";
+    function checkAntwort() {            
+        feedback.textContent = "OK, los geht's 😀";
         setTimeout(() => {
           window.location.href = "seite2.html"; // Neue Seite mit Bild und Text
         }, 1500);
-      } else {
-        feedback.textContent = "Das war leider falsch. 😕";
-      }
     }
   </script>
 </body>
 </html>
+
 
 
