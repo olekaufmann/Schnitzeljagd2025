@@ -17,8 +17,8 @@
       text-align: center;
     }
     img {
-      max-width: 60%;
-      border-radius: 50px;
+      max-width: 40%;
+      border-radius: 10px;
     }
     p {
       font-size: 18px;
@@ -37,32 +37,28 @@
       cursor: pointer;
     }
     #feedback {
-      margin-top: 20px;
+      margin-top: 10px;
       font-weight: bold;
     }
-
   </style>
 </head>
 <title> Weiter gehts! </title>
 <body>
-  <h1> Weiter mit einer kleinen Knobelaufgabe </h1>  
-  <img src="bilder/schnecke.jpg" alt="karte">
-  <p> Eine kleine Schnecke befindet sich auf dem Boden eines alten, inzwischen ausgetrockneten Brunnens. Es ist bekannt, dass der Brunnen insgesamt 10 Meter tief ist.
-Die kleine Schnecke möchte den Brunnen nun gerne wieder verlassen und beginnt also, an der Innenseite des Brunnens nach oben zu kriechen. Leider ist so eine kleine Schnecke nicht sonderlich schnell.
+<h1> Weiter mit einer kleinen Knobelaufgabe </h1>  
+<img src="bilder/schnecke.jpg" alt="karte">
+<p> Eine kleine Schnecke befindet sich auf dem Boden eines alten, inzwischen ausgetrockneten 10m tiefen Brunnens. Die kleine Schnecke möchte den Brunnen nun gerne wieder verlassen und beginnt also, 
+  an der Innenseite des Brunnens nach oben zu kriechen. Leider ist so eine kleine Schnecke nicht sonderlich schnell.
 Die Schnecke legt jede Stunde eine Distanz von 3 Metern nach oben zurück.
-Allerdings ist sie dann bereits so erschöpft, dass sie sich eine Stunde lang ausruhen muss, um ihre Kräfte zu regenerieren. In dieser Stunde rutscht die Schnecke dummerweise wieder um 2 Meter nach unten.
+Allerdings ist sie dann bereits so erschöpft, dass sie sich eine Stunde lang ausruhen muss. In dieser Stunde rutscht die Schnecke dummerweise wieder um 2 Meter nach unten.
 Dieses Spiel wiederholt sich so lange, bis die Schnecke irgendwann oben angekommen ist.</p>
-<p>Wie lange braucht die arme Schnecke, um aus dem Brunnen zu gelangen?</p>
- 
-  <input type="text" id="antwort" placeholder="Lösung bitte hier">
+<p>Wie viele Stunden braucht die arme Schnecke, um aus dem Brunnen zu gelangen?</p>
+   <input type="text" id="antwort" placeholder="Zahl der Stunden">
   <button onclick="checkAntwort()">Absenden</button>
   <div id="feedback"></div>
-
   <script>
     function checkAntwort() {
       const antwort = document.getElementById('antwort').value.trim().toLowerCase();
       const feedback = document.getElementById('feedback');
-
       if (antwort === "15") {
         feedback.textContent = "... und weiter geht's!";
         setTimeout(() => {
