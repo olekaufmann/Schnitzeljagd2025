@@ -39,49 +39,59 @@
   </style>
 </head>
 <body>
-  <h1> ....    .-    .-..     .-..    --- </h1>
-  <p>Morse-Code ist ziemlich schwer, aber ihr schafft das! </p>        
-  <p>Bei dem besagten Ort findet ihr das nächste Passwort.</p>
+  <h1>Wer ist das?</h1>
+  <p> Jetzt wird getestet wie gut ihr hören könnt. </p>        
+  <p>Kreuzt an was alles mit singt!</p>
   <audio id="meinAudio" controls>
-  <source src="audio/teich.mp3" type="audio/mpeg">  
+  <source src="audio/tiere.mp3" type="audio/mpeg">  
   Dein Browser unterstützt dieses Audioformat nicht.
   </audio>  
-  <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>  
+  <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>    
+
+
+  
+  <form id="quiz-form">
+    <label><input type="checkbox" name="tier" value="löwe"> Löwe</label><br>
+    <label><input type="checkbox" name="tier" value="elefant"> Elefant</label><br>
+    <label><input type="checkbox" name="tier" value="schwein"> Schwein</label><br>
+    <label><input type="checkbox" name="tier" value="kuh"> Kuh</label><br>
+    <label><input type="checkbox" name="tier" value="frosch"> Frosch</label><br>
+    <label><input type="checkbox" name="tier" value="pferd"> Pferd</label><br>
+    <label><input type="checkbox" name="tier" value="esel"> Esel</label><br><br>
+    <label><input type="checkbox" name="tier" value="amsel"> Amsel</label><br>
+    <label><input type="checkbox" name="tier" value="meise"> Meise</label><br>
+    <button type="button" onclick="checkAntwort()">✅ Prüfen</button>
+  </form>
+  
   
   <input type="text" id="antwort" placeholder="Passwort?">
   <button onclick="checkAntwort()">Absenden</button>
   <div id="feedback"></div>
 
-
-  <div class="button-container">
-    <button onclick="morse0()"> Hilfe</button>
-    <button onclick="morse1()"> Hilfe</button>    
-    <button onclick="morse2()"> Hilfe</button>    
-  </div>
   
   <script>
     function checkAntwort() {
-      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
-      const feedback = document.getElementById('feedback');
+      const richtigeAntworten = ['löwe', 'esel'];
+      const alleCheckboxen = document.querySelectorAll('input[name="tier"]');
+      let istRichtig = true;
 
-      if (antwort === "0308") {
-        feedback.textContent = "Richtig Super 😀 Ihr dürft passieren!";
-        setTimeout(() => {
-          window.location.href = "seite5.html"; // Neue Seite mit Bild und Text
-        }, 1500);
+      alleCheckboxen.forEach(checkbox => {
+        const istAusgewählt = checkbox.checked;
+        const sollAusgewähltSein = richtigeAntworten.includes(checkbox.value);
+
+        if (istAusgewählt !== sollAusgewähltSein) {
+          istRichtig = false;
+        }
+      });
+
+      const ergebnisBox = document.getElementById("ergebnis");
+      if (istRichtig) {
+        ergebnisBox.textContent = "✅ Richtig!";
+        ergebnisBox.style.color = "green";
       } else {
-        feedback.textContent = "Das war leider falsch. 😕";
+        ergebnisBox.textContent = "❌ Leider falsch. Versuch's nochmal!";
+        ergebnisBox.style.color = "red";
       }
-    }
-    function morse0() {
-      setTimeout(() => {window.location.href = "morse0.html";}, 100);
-    }
-    function morse1() {
-      setTimeout(() => {window.location.href = "morse1.html";}, 100);
-    }
-    function morse2() {
-      setTimeout(() => {window.location.href = "morse2.html";}, 100);
-    }
   </script>
 </body>
 </html>
