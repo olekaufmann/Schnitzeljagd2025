@@ -2,48 +2,59 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Frage-Webseite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Willkommen!</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      padding: 50px;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #ffd6ec, #ffe8f0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
     }
     input, button {
       padding: 10px;
       font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
     }
-    #result {
+    button {
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    #feedback {
       margin-top: 20px;
       font-weight: bold;
     }
   </style>
 </head>
 <body>
-
-  <h1>Frage:</h1>
-  <p>Was ist die Abkürzung für das World Wide Web?</p>
-
-  <input type="text" id="answerInput" placeholder="Antwort hier eingeben">
-  <button onclick="checkAnswer()">Prüfen</button>
-
-  <div id="result"></div>
+  <h1>🌸 Willkommen, liebe Besucherin! 🌸</h1>
+  <p>Magst du Überraschungen?</p>
+  <input type="text" id="antwort" placeholder="Gib hier deine Antwort ein">
+  <button onclick="checkAntwort()">Absenden</button>
+  <div id="feedback"></div>
 
   <script>
-    function checkAnswer() {
-      const input = document.getElementById("answerInput").value.trim().toLowerCase();
-      const result = document.getElementById("result");
+    function checkAntwort() {
+      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
 
-      if (input === "www") {
-        result.textContent = "Richtig ✅";
-        result.style.color = "green";
+      if (antwort === "ja") {
+        feedback.textContent = "Richtig!";
+        setTimeout(() => {
+          window.location.href = "seite2.html"; // Neue Seite mit Bild und Text
+        }, 1500);
       } else {
-        result.textContent = "Leider falsch ❌";
-        result.style.color = "red";
+        feedback.textContent = "Leider falsch.";
       }
     }
   </script>
-
 </body>
 </html>
