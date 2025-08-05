@@ -32,5 +32,24 @@
   <img src="bilder/karte.jpg" alt="karte">
   <p> </p>
   
+  <input type="text" id="antwort" placeholder="Gib hier die Kombination ein">
+  <button onclick="checkAntwort()">Absenden</button>
+  <div id="feedback"></div>
+
+  <script>
+    function checkAntwort() {
+      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+
+      if (antwort === "1111") {
+        feedback.textContent = "... und weiter geht's!";
+        setTimeout(() => {
+          window.location.href = "seite3.html"; // Neue Seite mit Bild und Text
+        }, 1500);
+      } else {
+        feedback.textContent = "Nicht raten! 😕";
+      }
+    }
+  </script>
 </body>
 </html>
