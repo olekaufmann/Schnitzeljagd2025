@@ -85,32 +85,35 @@
   <form id="quiz-form">
   <div class="checkbox-liste">   
   <div class="checkbox-grid">  
-    <label><input type="checkbox" name="tier" value="löwe"> Löwe</label>
-    <label><input type="checkbox" name="tier" value="elefant"> Elefant</label>
-    <label><input type="checkbox" name="tier" value="schwein"> Schwein</label>
+    <label><input type="checkbox" name="tier" value="vogel"> Vogel</label>
+    <label><input type="checkbox" name="tier" value="hund"> Hund</label>
+    <label><input type="checkbox" name="tier" value="tiger"> Tiger</label>
     <label><input type="checkbox" name="tier" value="wolf"> Wolf</label>
-    <label><input type="checkbox" name="tier" value="affe"> Affe</label>
-    <label><input type="checkbox" name="tier" value="frosch"> Frosch</label>
+    <label><input type="checkbox" name="tier" value="katze"> Katze</label>
+    <label><input type="checkbox" name="tier" value="huhn"> Huhn</label>
     <label><input type="checkbox" name="tier" value="pferd"> Pferd</label>
-    <label><input type="checkbox" name="tier" value="meise"> Meise</label>
-    <label><input type="checkbox" name="tier" value="bussard"> Bussard</label>
-    <label><input type="checkbox" name="tier" value="esel"> Esel</label>
-    <label><input type="checkbox" name="tier" value="amsel"> Amsel</label>
-    <label><input type="checkbox" name="tier" value="pfau"> Pfau</label>
-    <label><input type="checkbox" name="tier" value="schaf"> Schaf</label>
-    <label><input type="checkbox" name="tier" value="kuh"> Kuh</label>        
-    <label><input type="checkbox" name="tier" value="ziege"> Ziege</label>        
+    <label><input type="checkbox" name="tier" value="schildkröte"> Schildkröte</label>
+    <label><input type="checkbox" name="tier" value="fuchs"> Fox</label>
+    <label><input type="checkbox" name="tier" value="schmetterling"> Schmetterling</label>
+    <label><input type="checkbox" name="tier" value="spider"> Spinne</label>        
+    <label><input type="checkbox" name="tier" value="löwe"> Löwe</label>        
       
     </div>
     </div>
     </form>
+
+  <!--
+  https://www.suchsel.net/#google_vignette
+  HORSE BIRD CAT CHICKEN TURTLE SPIDER FOX LION BUTTERFLY
+
+  -->
   
   <button type="button" onclick="prüfeAntwort()">✅ Prüfen</button>
   <div class="result" id="ergebnis"></div>
 
   <script>
     function prüfeAntwort() {
-      const richtigeAntworten = ['löwe', 'kuh', 'amsel', 'elefant','esel','schwein','frosch'];
+      const richtigeAntworten = ['hund', 'tiger', 'wolf'];
       const alleCheckboxen = document.querySelectorAll('input[name="tier"]');
       let istRichtig = true;
 
