@@ -73,15 +73,10 @@
   </style>
 </head>
 <body>
-  <h2>Wer singt denn da?</h2>
-  <p> Jetzt wird getestet, wie gut ihr hören könnt. Findet alle <b>7</b> Tiere die da "mitsingen"! </p>        
+  <h2>Wer fehlt denn da?</h2>
+  <p> Who is missing. Find the <b>3</b> animals not on the image! </p>        
   
-  <audio id="meinAudio" controls>
-  <source src="audio/tiere.mp3" type="audio/mpeg">  
-  Dein Browser unterstützt dieses Audioformat nicht.
-  </audio>    
-  <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>    
-  
+  <img src="bilder/suchbild.jpg" alt="karte">  
   <form id="quiz-form">
   <div class="checkbox-liste">   
   <div class="checkbox-grid">  
@@ -96,8 +91,7 @@
     <label><input type="checkbox" name="tier" value="fuchs"> Fox</label>
     <label><input type="checkbox" name="tier" value="schmetterling"> Schmetterling</label>
     <label><input type="checkbox" name="tier" value="spider"> Spinne</label>        
-    <label><input type="checkbox" name="tier" value="löwe"> Löwe</label>        
-      
+    <label><input type="checkbox" name="tier" value="löwe"> Löwe</label>              
     </div>
     </div>
     </form>
@@ -105,7 +99,6 @@
   <!--
   https://www.suchsel.net/#google_vignette
   HORSE BIRD CAT CHICKEN TURTLE SPIDER FOX LION BUTTERFLY
-
   -->
   
   <button type="button" onclick="prüfeAntwort()">✅ Prüfen</button>
@@ -131,7 +124,7 @@
         ergebnisBox.style.color = "green";
         setTimeout(() => { window.location.href = "seite7.html"; }, 1500);
       } else {
-        ergebnisBox.textContent = "❌ Leider falsch. Hört nochmal hin!";
+        ergebnisBox.textContent = "❌ Leider falsch. Sucht weiter!";
         ergebnisBox.style.color = "red";
       }
     }
