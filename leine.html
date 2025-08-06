@@ -46,11 +46,13 @@
 <body>
 <h2> Jetzt wird es etwas kniffelig</h2>  
 
-<p> Den nächsten Hinweis findet ihr auf dem großen Feld vor euch versteckt. Viel Spaß beim Suchen </p>
+<p> Den nächsten Hinweis findet ihr auf dem großen Feld vor euch versteckt. Viel Spaß beim Suchen! 😎 </p>
    <input type="text" id="antwort" placeholder="Hinweis">
   <button onclick="checkAntwort()">Absenden</button>
   <div id="feedback"></div>
-  <p style="font-size: 10px; margin-top: 50px;"> Ein kleiner Tip. Der Hinweis ist genau 10m vom östlichen Ende der Bank entfernt. Etwa 10m östlich der Bank findet ihr am Wegesrand einen kleinen Stab im Boden. Auch von dort ist der Hinweis genau 10m entfernt. </p>
+  <p style="font-size: 10px; margin-top: 50px;"> Ein kleiner Tip: Der Hinweis ist genau 10m vom östlichen Ende der Bank entfernt. Etwa 10m östlich der Bank findet ihr am Wegesrand einen kleinen Stab im Boden. Auch von dort ist der Hinweis genau 10m entfernt. </p>
+ <p style="font-size: 6px; margin-top: 50px;"> Denkt an euer 20m Seil!</p>
+  
   <script>
     function checkAntwort() {
       const antwort = document.getElementById('antwort').value.trim().toLowerCase();
