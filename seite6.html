@@ -73,8 +73,8 @@
   </style>
 </head>
 <body>
-  <h2>Wer ist das?</h2>
-  <p> Jetzt wird getestet, wie gut ihr hören könnt. Findet alle <b>7</b>b> Tiere die "mitsingen"! </p>        
+  <h2>Wer singt denn da?</h2>
+  <p> Jetzt wird getestet, wie gut ihr hören könnt. Findet alle <b>7</b> Tiere die da "mitsingen"! </p>        
   
   <audio id="meinAudio" controls>
   <source src="audio/tiere.mp3" type="audio/mpeg">  
@@ -124,7 +124,7 @@
 
       const ergebnisBox = document.getElementById("ergebnis");
       if (istRichtig) {
-        ergebnisBox.textContent = "✅ Richtig!";
+        ergebnisBox.textContent = "✅ Sehr gut!";
         ergebnisBox.style.color = "green";
         setTimeout(() => { window.location.href = "seite5.html"; }, 1500);
       } else {
