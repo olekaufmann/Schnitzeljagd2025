@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiere</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', cursive, sans-serif;
+      background: linear-gradient(to right, #CFFF9B, #CFFF9B);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+   input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .container {
+      display: flex;
+      justify-content: left; /* Zentriert den inneren Block horizontal */
+      margin-top: 10px;
+    }
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr  1fr 1fr; /* Two equal-width columns */
+      gap: 10px 20px; /* row-gap and column-gap */
+      max-width: 400px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
+    .checkbox-liste {
+      text-align: left;     /* Text + Checkbox linksbündig */
+      display: inline-block;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    .checkbox-liste label {
+      display: block;
+      margin-bottom: -10px;
+    }
+    .checkbox-grid label {
+      display: flex;
+      align-items: center;
+    }
+    .result {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Wer singt denn da?</h2>
+  <p> Jetzt wird getestet, wie gut ihr hören könnt. Findet alle <b>7</b> Tiere die da "mitsingen"! </p>        
+  
+  <audio id="meinAudio" controls>
+  <source src="audio/tiere.mp3" type="audio/mpeg">  
+  Dein Browser unterstützt dieses Audioformat nicht.
+  </audio>    
+  <button onclick="document.getElementById('meinAudio').play()">🎵 abspielen</button>    
+  
+  <form id="quiz-form">
+  <div class="checkbox-liste">   
+  <div class="checkbox-grid">  
+    <label><input type="checkbox" name="tier" value="löwe"> Löwe</label>
+    <label><input type="checkbox" name="tier" value="elefant"> Elefant</label>
+    <label><input type="checkbox" name="tier" value="schwein"> Schwein</label>
+    <label><input type="checkbox" name="tier" value="wolf"> Wolf</label>
+    <label><input type="checkbox" name="tier" value="affe"> Affe</label>
+    <label><input type="checkbox" name="tier" value="frosch"> Frosch</label>
+    <label><input type="checkbox" name="tier" value="pferd"> Pferd</label>
+    <label><input type="checkbox" name="tier" value="meise"> Meise</label>
+    <label><input type="checkbox" name="tier" value="bussard"> Bussard</label>
+    <label><input type="checkbox" name="tier" value="esel"> Esel</label>
+    <label><input type="checkbox" name="tier" value="amsel"> Amsel</label>
+    <label><input type="checkbox" name="tier" value="pfau"> Pfau</label>
+    <label><input type="checkbox" name="tier" value="schaf"> Schaf</label>
+    <label><input type="checkbox" name="tier" value="kuh"> Kuh</label>        
+    <label><input type="checkbox" name="tier" value="ziege"> Ziege</label>        
+      
+    </div>
+    </div>
+    </form>
+  
+  <button type="button" onclick="prüfeAntwort()">✅ Prüfen</button>
+  <div class="result" id="ergebnis"></div>
+
+  <script>
+    function prüfeAntwort() {
+      const richtigeAntworten = ['löwe', 'kuh', 'amsel', 'elefant','esel','schwein','frosch'];
+      const alleCheckboxen = document.querySelectorAll('input[name="tier"]');
+      let istRichtig = true;
+
+      alleCheckboxen.forEach(checkbox => {
+        const istAusgewählt = checkbox.checked;
+        const sollAusgewähltSein = richtigeAntworten.includes(checkbox.value);
+        if (istAusgewählt !== sollAusgewähltSein) {
+          istRichtig = false;
+        }
+      });
+
+      const ergebnisBox = document.getElementById("ergebnis");
+      if (istRichtig) {
+        ergebnisBox.textContent = "✅ Sehr gut!";
+        ergebnisBox.style.color = "green";
+        setTimeout(() => { window.location.href = "seite7.html"; }, 1500);
+      } else {
+        ergebnisBox.textContent = "❌ Leider falsch. Hört nochmal hin!";
+        ergebnisBox.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
