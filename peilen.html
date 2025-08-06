@@ -45,22 +45,24 @@
 <title> Peilung </title>
 <body>
 <h2>  </h2>  
-<img src="bilder/kompass" alt="kompass">
+<img src="bilder/kompass.jpg" alt="kompass">
 <p> Blickt ihr Richtung Dresden könnt ihr den dresdener Fernsehturm erkennen. Unter welcher Peilung erscheint er?</p>
    <input type="text" id="antwort" placeholder="Peilung in Grad">
   <button onclick="checkAntwort()">Absenden</button>
   <div id="feedback"></div>
   <script>
     function checkAntwort() {
-      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
+      const antwort = document.getElementById('antwort').value;
+      const number = parseFloat(antwort);
+
       const feedback = document.getElementById('feedback');
-      if (antwort === "15") {
-        feedback.textContent = "... und weiter geht's!";
+      if ((number > 351) & (number < 359)) {
+        feedback.textContent = "Richtig! ";
         setTimeout(() => {
           window.location.href = "wald.html"; // Neue Seite mit Bild und Text
         }, 1500);
       } else {
-        feedback.textContent = "Genau messen! 😕";
+        feedback.textContent = "Nochmal genau messen! 😕";
       }
     }
   </script>
