@@ -41,11 +41,11 @@
     Der Pirat in der ersten Schicht, traut den anderen nicht so recht und nimmt sich heimlich schonmal ein Drittel aller Münzen. 
     Dem nächsten Pirat geht es ähnlich und auch er nimmt sich in seiner Schicht schonmal ein Drittel aller noch vorhandenen Münzen. 
     Wie sollte es anders sein, der dritte Pirat traut den anderen auch nicht so richtig und nimmt sich in der seinter letzten Schicht auch noch genau ein Drittel der verbliebenen Münzen. 
-    Am Morgen liegen dann nur noch magere 24 Münzen in der Truhe.
+    Am Morgen liegen dann nur noch magere 8 Münzen in der Truhe.
   </p>
   <p> Wieviele Münzen lagen am Anfang in der Truhe?</p>
   <!--
-  24 * 3/2 * 3/2 * 3/2  = 27*2 = 81
+  8 * 3/2 * 3/2 * 3/2  = 27*2 = 27
   -->
 
   <input type="text" id="antwort" placeholder="Gib hier die Antwort ein">
@@ -57,7 +57,7 @@
       const antwort = document.getElementById('antwort').value.trim().toLowerCase();
       const feedback = document.getElementById('feedback');
 
-      if (antwort === "81") {
+      if (antwort === "27") {
         feedback.textContent = "Richtig Super 😀 Ihr dürft passieren!";
         setTimeout(() => {
           window.location.href = "seite2.html"; // Neue Seite mit Bild und Text
