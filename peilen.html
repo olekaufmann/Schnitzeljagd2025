@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', cursive, sans-serif;
+      background: linear-gradient(to right, #CFFF9B, #CFFF9B);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    img {
+      max-width: 30%;
+      border-radius: 10px;
+    }
+    p {
+      font-size: 18px;
+      margin-top: 8px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin: 2px;
+      border: none;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    #feedback {
+      margin-top: 5px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<title> Peilung </title>
+<body>
+<h2>  </h2>  
+<img src="bilder/kompass" alt="kompass">
+<p> Blickt ihr Richtung Dresden könnt ihr den dresdener Fernsehturm erkennen. Unter welcher Peilung erscheint er?</p>
+   <input type="text" id="antwort" placeholder="Peilung in Grad">
+  <button onclick="checkAntwort()">Absenden</button>
+  <div id="feedback"></div>
+  <script>
+    function checkAntwort() {
+      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+      if (antwort === "15") {
+        feedback.textContent = "... und weiter geht's!";
+        setTimeout(() => {
+          window.location.href = "wald.html"; // Neue Seite mit Bild und Text
+        }, 1500);
+      } else {
+        feedback.textContent = "Genau messen! 😕";
+      }
+    }
+  </script>
+</body>
+</html>
