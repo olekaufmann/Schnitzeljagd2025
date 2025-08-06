@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', cursive, sans-serif;
+      background: linear-gradient(to right, #CFFF9B, #CFFF9B);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    img {
+      max-width: 30%;
+      border-radius: 10px;
+    }
+    p {
+      font-size: 18px;
+      margin-top: 8px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin: 2px;
+      border: none;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    #feedback {
+      margin-top: 5px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<title> Weiter gehts! </title>
+<body>
+<h2> Jetzt wird es etwas kniffelig</h2>  
+
+<p> Den nächsten Hinweis findet ihr auf dem großen Feld vor euch versteckt. Viel Spaß beim Suchen </p>
+<p> Ein kleiner Tip. Der Hinweis ist genau 10m vom östlichen Ende der Bank entfernt. Etwa 10m östlich der Bank findet ihr am Wegesrand einen kleinen Stab im Boden. Auch von dort ist der Hinweis genau 10m entfernt. </p>
+   <input type="text" id="antwort" placeholder="Hinweis">
+  <button onclick="checkAntwort()">Absenden</button>
+  <div id="feedback"></div>
+  <script>
+    function checkAntwort() {
+      const antwort = document.getElementById('antwort').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+      if (antwort === "xxx") {
+        feedback.textContent = "... und weiter geht's!";
+        setTimeout(() => {
+          window.location.href = "ahorn.html"; // Neue Seite mit Bild und Text
+        }, 1500);
+      } else {
+        feedback.textContent = "Nicht raten! 😕";
+      }
+    }
+  </script>
+</body>
+</html>
