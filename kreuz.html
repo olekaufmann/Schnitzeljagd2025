@@ -35,16 +35,22 @@
       margin-top: 4px;
       font-weight: bold;
     }
+    .inline-container {
+    display: flex;
+    gap: 10px; /* spacing between input and button */
+  }
+
   </style>
 </head>
 <body>
-  <h2> ☩ </h2>    
+  <h1> ☩    ☩ </h1>    
   <img src="bilder/karte_2.jpg" alt="karte">
   <p> Folgt dem Weg bis zum Quadranten F5. Haltet dort auf dem Boden Ausschau nach zwei in Stein gehauenen Kreuzen. Dort werdet ihr mit schwarzer Farbe geschrieben den Code finden, den ihr braucht um weiterzukommen.  </p>
   <p> ps: die rote Ziffer braucht ihr am Ende für die Code-Ziffer Nr. 3?</p>
-  
+  <div class="inline-container">
   <input type="text" id="antwort" placeholder="Gib hier die Antwort ein">
   <button onclick="checkAntwort()">Absenden</button>
+  </div>
   <div id="feedback"></div>
 
   <script>
