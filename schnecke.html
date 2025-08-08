@@ -16,7 +16,7 @@
       text-align: center;
     }
     img {
-      max-width: 30%;
+      max-width: 40%;
       border-radius: 10px;
     }
     p {
@@ -39,16 +39,27 @@
       margin-top: 5px;
       font-weight: bold;
     }
+    clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .inline-container {
+    display: flex;
+    gap: 10px; /* spacing between input and button */
+  }
   </style>
 </head>
 <body>
 <h2> Eine Knobelaufgabe </h2>  
-<img src="bilder/schnecke.jpg" alt="karte">
+<div class="clearfix">
+<img src="bilder/schnecke.jpg" alt="schnecke">  
 <p> Eine kleine Schnecke befindet sich auf dem Boden eines alten, inzwischen ausgetrockneten 10m tiefen Brunnens. Die kleine Schnecke möchte den Brunnen nun gerne wieder verlassen und beginnt also, 
   an der Innenseite des Brunnens nach oben zu kriechen. Leider ist so eine kleine Schnecke nicht sehr schnell.
 Die Schnecke legt jede Stunde eine Distanz von 3 Metern nach oben zurück.
 Allerdings ist sie dann immer so erschöpft, dass sie sich eine Stunde lang ausruhen muss. In dieser Stunde rutscht die Schnecke dummerweise wieder um 2 Meter nach unten.
 Dieses Spiel wiederholt sich so lange, bis die Schnecke irgendwann oben angekommen ist.</p>
+</div>
 <p>Wie viele Stunden braucht die arme Schnecke, um aus dem Brunnen zu gelangen?</p>
    <input type="text" id="antwort" placeholder="Zahl der Stunden">
   <button onclick="checkAntwort()">Absenden</button>
