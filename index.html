@@ -26,6 +26,11 @@
       color: white;
       cursor: pointer;
     }
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
     p {
       font-size: 18px;
       margin-top: 1px;
@@ -38,6 +43,8 @@
 </head>
 <body>
   <h1> 🏴‍☠️ Willkommen!  🏴‍☠️ </h1>
+  <div class="clearfix">
+    <img class="wrap-img" src="bilder/pirat.jpg" alt="Placeholder">
   <p>Wenn ihr das hier lest, heißt es, dass ihr die erste Aufgabe schon gelöst habt und auf dem besten Weg seid, meinen Schatz zu finden! </p>      
   <p> Aber Achtung, es wird nicht leicht! Wenn ihr Erfolg haben wollt, braucht ihr folgende Sachen: </p>
   <ul>
@@ -49,6 +56,7 @@
   <li>20m Schnur,</li>  
   <li> ....und natürlich viel gute Laune! 😀</li>  
   </ul>  
+  </div>
   <p> Um am Ende an den Schatz zu kommen, braucht ihr einen vierstelligen Code. Schaut zu dass ihr unterwegs alle notwendigen Infomationen sammelt und notiert.  </p>
   <p style="margin-top: 20px; font-size: 12px";> PS: Die erste Ziffer des Codes entspricht dem aktuellen Monat. </p>
   
@@ -62,6 +70,7 @@
   </script>
 </body>
 </html>
+
 
 
 
