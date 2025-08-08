@@ -3,30 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Schnitzeljagd </title>
+  <title>Schnitzeljagd</title>
   <style>
     body {
-      margin: 10px;
+      margin: 5px;      
       font-family: 'Arial', cursive, sans-serif;
-      background: linear-gradient(to right, #CFFF9B, #CFFF9B);
+      background: linear-gradient(to right, #ffd6ec, #ffd6ec);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;      
-      text-align: center;
-    }
-    img {
-      max-width: 40%;
-      border-radius: 10px;
-    }
-    p {
-      font-size: 18px;
-      margin-top: 8px;
     }
     input, button {
       padding: 10px;
-      font-size: 18px;
-      margin: 2px;
+      font-size: 16px;
+      margin: 10px;
       border: none;
       border-radius: 8px;
     }
@@ -35,21 +26,28 @@
       color: white;
       cursor: pointer;
     }
-    #feedback {
-      margin-top: 5px;
-      font-weight: bold;
+    img {
+      float: left;
+      margin-right: 15px;      
+      max-width: 30%;
+      border-radius: 10px;
     }
     .clearfix::after {
       content: "";
       display: table;
       clear: both;
     }
-    .inline-container {
-    display: flex;
-    gap: 10px; /* spacing between input and button */
-  }
+    p {
+      font-size: 18px;
+      margin-top: 1px;
+    }
+    #feedback {
+      margin-top: 5px;
+      font-weight: bold;
+    }    
   </style>
 </head>
+
 <body>
 <h2> Eine Knobelaufgabe </h2>  
 <div class="clearfix">
