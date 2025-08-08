@@ -36,6 +36,10 @@
       color: white;
       cursor: pointer;
     }
+    .inline-container {
+    display: flex;
+    gap: 10px; /* spacing between input and button */
+  }
     #feedback {
       margin-top: 5px;
       font-weight: bold;
@@ -45,9 +49,12 @@
 <body>
 <h2> Jetzt wird es etwas kniffelig</h2>  
 
-<p> Den nächsten Hinweis findet ihr auf dem großen Feld vor euch versteckt. Viel Spaß beim Suchen! 😎 </p>
+<p> Den nächsten Hinweis findet ihr auf dem großen Feld vor euch versteckt. </p>
+<p>Viel Spaß beim Suchen! 😎 </p>
+  <div class="inline-container">
    <input type="text" id="antwort" placeholder="Hinweis">
   <button onclick="checkAntwort()">Absenden</button>
+  </div>
   <div id="feedback"></div>
   <p style="font-size: 10px; margin-top: 50px;"> Ein kleiner Tip: Östlich der Bank findet ihr am Wegesrand einen kleinen Stab im Boden, der genau 10m von der Bank entfernt ist.</p>
   <p style="font-size: 10px; margin-top: 1px;"> Der Hinweis ist nun sowohl von der Bank als auch vom Stab genau 10m entfernt. </p>
