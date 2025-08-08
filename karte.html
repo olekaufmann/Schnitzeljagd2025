@@ -49,7 +49,7 @@
 <body>
   <h1> Es wird wärmer ... </h1>
   <p> Begebt euch zu dem Ort auf der Karte! </p>
-  <p> Dort solltet ihr eine Bank finden. Sucht dort nach der nächsten Zahlen-Kombination. </p>
+  <p> Dort solltet ihr eine Bank finden. Sucht dort nach der nächsten dreistelligen Zahlen-Kombination. </p>
   <img src="bilder/karte.jpg" alt="karte">
   <div class="inline-container">
   <input type="text" id="antwort" placeholder="Zahlen-Kombination">
@@ -62,7 +62,7 @@
       const antwort = document.getElementById('antwort').value.trim().toLowerCase();
       const feedback = document.getElementById('feedback');
 
-      if (antwort === "12") {
+      if (antwort === "123") {
         feedback.textContent = "... und weiter geht's!";
         setTimeout(() => {
           window.location.href = "schnecke.html"; // Neue Seite mit Bild und Text
