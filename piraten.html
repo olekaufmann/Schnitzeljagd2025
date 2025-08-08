@@ -12,13 +12,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;      
-      text-align: center;
+      justify-content: center;            
     }
     img {
       float: left;
       margin-right: 15px;   
-      max-width: 30%;
+      max-width: 35%;
       border-radius: 10px;
     }
     .clearfix::after {
@@ -67,9 +66,9 @@
   -->
 <div class="inline-container">
   <input type="text" id="antwort" placeholder="Münzen am Anfang">
-  <button onclick="checkAntwort()">Absenden</button>
-  <div id="feedback"></div>
+  <button onclick="checkAntwort()">Absenden</button>  
 </div>
+  <div id="feedback"></div>
   <script>
     function checkAntwort() {
       const antwort = document.getElementById('antwort').value.trim().toLowerCase();
